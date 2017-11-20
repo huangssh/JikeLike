@@ -163,31 +163,8 @@ public class LikeView extends LinearLayout {
                 float spacing = (1.0f * translationY / mMoveY) * (mPaint1.measureText("0") / 2f * ((digits - (1 + (digits - 1) * 0.5f)) - (i - noDigits)));
                 // 点赞动画
                 if (isLike()){
-//                    float spacing = (1.0f * translationY / mMoveY) * (mPaint1.measureText("0"));
                     canvas.drawText(n1, (float) paddingLeft + spacing, baseLine - translationY, mPaint1);
                     canvas.drawText(n2, (float) paddingLeft, baseLine + mMoveY - translationY, mPaint2);
-
-//                    // 变动位数为偶数
-//                    if (digits % 2 == 0){
-//                        if (text2.length() - i > digits / 2){
-//                            canvas.drawText(n1, (float) paddingLeft + spacing, baseLine - translationY, mPaint1);
-//                        }else{
-//                            canvas.drawText(n1, (float) paddingLeft - spacing, baseLine - translationY, mPaint1);
-//                        }
-//                    // 变动位数为奇数
-//                    }else{
-//                        // 变动数为1或变动位为中间的数，x方向不做偏移
-//                        if (digits == 1 || i == (digits + 1) / 2){
-//                            canvas.drawText(n1, (float) paddingLeft, baseLine - translationY, mPaint1);
-//                        }else{
-//                            if (text2.length() - i > digits / 2f){
-//                                canvas.drawText(n1, (float) paddingLeft + spacing, baseLine - translationY, mPaint1);
-//                            }else{
-//                                canvas.drawText(n1, (float) paddingLeft - spacing, baseLine - translationY, mPaint1);
-//                            }
-//                        }
-//                    }
-//                    canvas.drawText(n2, (float) paddingLeft, baseLine + mMoveY - translationY, mPaint2);
                 }else{
                     // 首次不做动画
                     if (isFirst){
@@ -197,27 +174,6 @@ public class LikeView extends LinearLayout {
 
                         canvas.drawText(n2, (float) paddingLeft - spacing, baseLine + translationY, mPaint1);
                         canvas.drawText(n1, (float) paddingLeft, baseLine - mMoveY + translationY, mPaint2);
-//                        // 变动位数为偶数
-//                        if (digits % 2 == 0){
-//                            if (text2.length() - i > digits / 2){
-//                                canvas.drawText(n2, (float) paddingLeft - spacing, baseLine + translationY, mPaint1);
-//                            }else{
-//                                canvas.drawText(n2, (float) paddingLeft + spacing, baseLine + translationY, mPaint1);
-//                            }
-//                            // 变动位数为奇数
-//                        }else{
-//                            if (digits == 1 || i == (digits + 1) / 2){
-//                                canvas.drawText(n1, (float) paddingLeft, baseLine + translationY, mPaint1);
-//                            }else{
-//                                if (text2.length() - i > digits / 2f){
-//                                    canvas.drawText(n2, (float) paddingLeft - spacing, baseLine + translationY, mPaint1);
-//                                }else{
-//                                    canvas.drawText(n2, (float) paddingLeft + spacing, baseLine + translationY, mPaint1);
-//                                }
-//                            }
-//                        }
-
-//                        canvas.drawText(n1, (float) paddingLeft, baseLine - mMoveY + translationY , mPaint2);
                     }
                 }
             // 其他位不用变动
