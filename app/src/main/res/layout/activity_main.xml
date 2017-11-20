@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.huangssh.jikelike.MainActivity">
+
+    <com.huangssh.jikelike.LikeView
+        android:layout_width="115dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+
+    <com.huangssh.jikelike.LikeView
+        android:id="@+id/like1"
+        android:layout_width="115dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+
+    <com.huangssh.jikelike.LikeView
+        android:id="@+id/like2"
+        android:layout_width="115dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+
+    <com.huangssh.jikelike.LikeView
+        android:id="@+id/like3"
+        android:layout_width="115dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
