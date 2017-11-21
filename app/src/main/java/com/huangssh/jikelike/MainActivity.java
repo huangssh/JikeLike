@@ -25,6 +25,6 @@ public class MainActivity extends AppCompatActivity {
         like2.setNewNum(10999);
 
         like3 = (LikeView) findViewById(R.id.like3);
-        like3.setNewNum(109999);
+        like3.setNewNum(99999);
     }
 }
