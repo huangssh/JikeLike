@@ -159,8 +159,12 @@ public class LikeView extends LinearLayout {
 
             // 加1之后同位不相等则启动动画置换
             if (!n1.equals(n2)){
-                // x位移以半个身位往中心点聚拢
-                float spacing = (1.0f * translationY / mMoveY) * (mPaint1.measureText("0") / 2f * ((digits - (1 + (digits - 1) * 0.5f)) - (i - noDigits)));
+                // 变动位x坐标位移往中心点聚拢
+                float spacing = (1.0f * translationY / mMoveY) * (mPaint1.measureText("0") / 2f
+                        // 第一个变动位的位移距离 = 变动位 - 1为首项，公差为0.5的等差数列 = 变动位 - (1 + (n-1)  * 0.5)， n为变动位
+                        * ((digits - (1 + (digits - 1) * 0.5f))
+                        // 之后每个变动位以一个单位递减x位移距离
+                        - (i - noDigits)));
                 // 点赞动画
                 if (isLike()){
                     canvas.drawText(n1, (float) paddingLeft + spacing, baseLine - translationY, mPaint1);
@@ -169,9 +173,8 @@ public class LikeView extends LinearLayout {
                     // 首次不做动画
                     if (isFirst){
                         canvas.drawText(n1, (float) paddingLeft, baseLine, mPaint0);
-                    // 取消赞动画
+                    // 取消赞动画, 相反的位移操作
                     }else{
-
                         canvas.drawText(n2, (float) paddingLeft - spacing, baseLine + translationY, mPaint1);
                         canvas.drawText(n1, (float) paddingLeft, baseLine - mMoveY + translationY, mPaint2);
                     }
